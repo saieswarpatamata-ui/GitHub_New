@@ -1,0 +1,30 @@
+Dockerfile Components
+
+ 
+
+FROM : used to define the base imagesex: Python, node, mysql, nginx
+EXPOSE : used to expose the container Portex: 80, 8080, 5000, 3000
+MAINTAINER : used to add author detailsex: mustafa, aruna, manikanta
+LABELS : used to add a description about our image
+COPY : used to copy the files from host to container, also it can’t support ulr’s
+ADD : used to copy the files from host to container, also it support ulr’s
+
+
+
+
+Example of Dockerfile based on above components:
+FROM ubuntu
+EXPOSE 80
+MAINTAINER mustafa
+LABELS this is my first image
+COPY index.html .
+ADD <url-from-internet> .
+
+
+
+
+COMMANDS:
+to create an image : docker build -t imagename .
+to create a container : docker run -itd --name cont-name imagename
+to enter into container : docker exec -it cont-name bash
+
